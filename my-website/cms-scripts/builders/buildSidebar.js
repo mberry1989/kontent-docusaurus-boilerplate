@@ -11,17 +11,15 @@ async function buildSidebar(sections) {
       `
   fs.writeFileSync(`sidebars.js`, data)
 
-    return console.log('done.');
+    return console.log('Sidebar created.');
 }
 
 function buildSections(response) {
     var sidebarItems = response.items.map(item => {
-        //create docs object
         var section = {
             label: item.title.value,
             codename: item.system.codename,
-            type: "category",
-            
+            type: "category",           
         }
         if (item.system.type == 'page') { 
             section.items=item.subpages.itemCodenames
@@ -42,8 +40,6 @@ function buildSections(response) {
 
 function buildSubSections(sidebarItems) {
     var sections = sidebarItems.map(section => section.codename)
-
-    console.log('sections ' + sections)
 
     // array of subsections to remove from root level of the sidebar
     var filters =[]
@@ -77,7 +73,7 @@ function buildSubSections(sidebarItems) {
     // remove nested section from level 0 of sidebar
     sidebarWithCodenames = sidebarWithCodenames.filter(item => !filters.includes(item.codename))
 
-    //delete codenames from objects -- codenames are necessry for mapping, but not allowed by 'docs' plugin
+    // delete codenames from objects -- codenames are necessry for mapping, but not allowed by 'docs' plugin
     const sidebar = sidebarWithCodenames.map(({codename, ...keepAttrs}) => keepAttrs)
 
     return sidebar

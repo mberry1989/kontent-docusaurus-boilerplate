@@ -1,7 +1,7 @@
 const { deliveryClient } = require('../config')
 const fs = require('fs');
 
-async function fetchArticles(contentType) {
+async function fetchItems(contentType) {
     const items = await deliveryClient.items()
         .type(contentType)
         .toPromise()
@@ -12,7 +12,7 @@ async function fetchArticles(contentType) {
         return items;
 }
 
-exports.fetchArticles = fetchArticles;
+exports.fetchItems = fetchItems;
 
 
 

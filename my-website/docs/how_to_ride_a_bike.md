@@ -4,4 +4,4 @@ title: How to ride a bike
 sidebar_label: How to ride a bike
 slug: how-to-ride-a-bike
 ---
-**Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+There’s a common misconception that if you didn’t learn to ride a bike as a kid, you’ve missed your chance. But Marilyn Northcotte has been teaching adults how to ride for decades through a program called [Pedal Ready](https://www.pedalready.org.nz/workplaces-adults) in Wellington, New Zealand. The vast majority of her students (some as old as 69!) have mastered the art of riding.

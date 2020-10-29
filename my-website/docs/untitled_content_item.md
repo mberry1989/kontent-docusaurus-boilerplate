@@ -4,4 +4,8 @@ title: How to swim
 sidebar_label: How to swim
 slug: how-to-swim
 ---
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+There’s nothing like swimming on a hot summer day. However, [swimming](https://www.healthline.com/health/benefits-of-swimming) is also a skill that can save your life. When you know how to swim, you can safely enjoy water activities like kayaking and [surfing](https://www.healthline.com/health/mental-health/surfing-anxiety#1).
+
+Swimming is a great workout, too. It forces your body to work against resistance, which [strengthens your muscles](https://www.healthline.com/health/fitness-exercise/swim-workouts-target-your-belly), heart, and lungs.
+
+The best way to learn how to swim is to take lessons. Let’s look at the most commonly taught strokes and how to improve your technique.

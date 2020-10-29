@@ -20,7 +20,6 @@
         "type": "category",
         "items": [
           "sub1_documentation",
-          "untitled_content_item_2ca4068",
           {
             "label": "Bike Trail Safety",
             "type": "category",

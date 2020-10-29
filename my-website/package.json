@@ -9,8 +9,7 @@
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
-    "kontent:prepare": "docusaurus add kontent",
-    "kontent:start": "npm run kontent:prepare && npm run start"
+    "kontent":"npm run docusaurus sync-kontent"
   },
   "dependencies": {
     "@docusaurus/core": "2.0.0-alpha.65",

@@ -1,7 +1,7 @@
 const fs = require('fs');
 const markdownConverter = require('./markdownConverter');
 
-async function buildArticles(response) {
+async function buildContent(response) {
     for (var item of response){
         //documentation content
         const title = item.title.value;
@@ -18,4 +18,4 @@ async function buildArticles(response) {
     }
 }
 
-exports.buildArticles = buildArticles;
+exports.buildContent = buildContent;
