@@ -1,4 +1,5 @@
 const fs = require('fs');
+require('dotenv').config()
 
 async function buildSidebar(sections) {
     let sidebarSections = buildSections(sections);
@@ -21,7 +22,7 @@ function buildSections(response) {
             codename: item.system.codename,
             type: "category",           
         }
-        if (item.system.type == 'page') { 
+        if (item.system.type == process.env.PAGE_CONTENT_TYPE) { 
             section.items=item.subpages.itemCodenames
         }
         else {

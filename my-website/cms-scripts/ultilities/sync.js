@@ -1,9 +1,9 @@
 const fs = require('fs');
 const { fetchItems } = require('../api/fetchItems');
 
-async function fileSystemSync(docsPath) {
+async function fileSystemSync(docsPath, contentType) {
     // calls to Headless CMS API for documentation content
-    let response =  await fetchItems('documentation');// need to replace hard-coded content types
+    let response =  await fetchItems(contentType);// need to replace hard-coded content types
 
     // create array of codenames
     let cmsContent = response.map(item => item.system.codename)

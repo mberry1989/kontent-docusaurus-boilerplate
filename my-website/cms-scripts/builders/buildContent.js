@@ -1,5 +1,6 @@
 const fs = require('fs');
 const markdownConverter = require('./markdownConverter');
+require('dotenv').config()
 
 async function buildContent(response) {
     for (var item of response){
@@ -14,7 +15,7 @@ async function buildContent(response) {
         //convert JSON values to markdown
         const data = markdownConverter.convert(codename, title, body_copy, url)
 
-        fs.writeFileSync(`docs/${codename}.md`, data)
+        fs.writeFileSync(`${process.env.DOCS_DIR}/${codename}.md`, data)
     }
 }
 
