@@ -15,7 +15,8 @@ async function buildContent(response) {
         //convert JSON values to markdown
         const data = markdownConverter.convert(codename, title, body_copy, url)
 
-        fs.writeFileSync(`${process.env.DOCS_DIR}/${codename}.md`, data)
+        // use .mdx to leverage Docusaurus markdown features for inline components
+        fs.writeFileSync(`${process.env.DOCS_DIR}/${codename}.mdx`, data)
     }
 }
 

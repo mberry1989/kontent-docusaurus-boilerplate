@@ -25,6 +25,7 @@ module.exports = function (context, options) {
           // build ./sidebars.js with API navigation data using fs.writeFileSync
           await buildSidebar(sections);
 
+          // deletes documentation from docusaurus project that is not present in the CMS
           await fileSystemSync(process.env.DOCS_DIR, process.env.DOC_CONTENT_TYPE)
         });
     },

@@ -16,7 +16,7 @@
       "how_to_ride_a_bike",
       "untitled_content_item",
       {
-        "label": "Subsection 1",
+        "label": "Facilities",
         "type": "category",
         "items": [
           "sub1_documentation",

@@ -2,12 +2,12 @@ const fs = require('fs');
 require('dotenv').config()
 
 async function buildSidebar(sections) {
-    let sidebarSections = buildSections(sections);
+    let sidebar = buildSections(sections);
 
     const data =`    
     module.exports = {
         "documentationSidebar": 
-            ${sidebarSections}
+            ${sidebar}
       };
       `
   fs.writeFileSync(`sidebars.js`, data)
@@ -15,38 +15,45 @@ async function buildSidebar(sections) {
     return console.log('Sidebar created.');
 }
 
+// 
 function buildSections(response) {
-    var sidebarItems = response.items.map(item => {
-        var section = {
+    let sidebarItems = response.items.map(item => {
+        let section = {
             label: item.title.value,
             codename: item.system.codename,
             type: "category",           
         }
+
+        // pages dictate navigation via the subpages element in Kontent
         if (item.system.type == process.env.PAGE_CONTENT_TYPE) { 
             section.items=item.subpages.itemCodenames
         }
+        // homepage uses the "content" element instead of "subpages"
         else {
-            // homepage uses "content" element instead of "subpages"
             section.items=item.content.itemCodenames
         }
         
         return section
     }); 
 
-    var newSidebar = buildSubSections(sidebarItems)
-    var sidebarItemsJSON = JSON.stringify(newSidebar, null, 2)
+    // handle nested pages
+    let sidebarWithNesting = buildSubSections(sidebarItems)
 
-    return sidebarItemsJSON
+    // 'docs' plugin requires JSON format in the sidebars.js file
+    let sidebarJSON = JSON.stringify(sidebarWithNesting, null, 2)
+
+    return sidebarJSON
 }   
 
 function buildSubSections(sidebarItems) {
-    var sections = sidebarItems.map(section => section.codename)
+    let sections = sidebarItems.map(section => section.codename)
 
-    // array of subsections to remove from root level of the sidebar
-    var filters =[]
+    // array of nested pages to remove from root level of the sidebar
+    let filters =[]
 
-    var sidebarWithCodenames = sidebarItems.map(item => {
+    let sidebarWithCodenames = sidebarItems.map(item => {
         for (section of sections) {
+            // check to see if a page is nested
             if(item.items.indexOf(section) != -1) {
                 // find the codename in the parent section items array
                 let itemToReplace = item.items.find(x => x == section)
@@ -67,7 +74,7 @@ function buildSubSections(sidebarItems) {
                item.items[item.items.indexOf(itemToReplace)] = replacement
             }
         }
-
+        
         return item
     })
 
