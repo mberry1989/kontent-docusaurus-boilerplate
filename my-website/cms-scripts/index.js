@@ -20,7 +20,7 @@ module.exports = function (context, options) {
           await buildContent(response)
 
           // calls to Headless CMS API for page and homepage web spotlight types
-          let sections = await fetchPages();
+          let sections = await fetchPages(process.env.DOC_CONTENT_TYPE);
 
           // build ./sidebars.js with API navigation data using fs.writeFileSync
           await buildSidebar(sections);

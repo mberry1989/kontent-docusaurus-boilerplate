@@ -1,8 +1,8 @@
 const { deliveryClient } = require('../config')
 
-async function fetchPages() {
+async function fetchPages(contentType) {
     const sections = await deliveryClient.items()
-        .notEqualsFilter('system.type', 'documentation')
+        .notEqualsFilter('system.type', contentType)
         .depthParameter(2)
         .toPromise()
         .then(response => {
