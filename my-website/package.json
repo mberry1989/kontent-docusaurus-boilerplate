@@ -9,7 +9,7 @@
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "serve": "docusaurus serve",
-    "kontent":"npm run docusaurus sync-kontent"
+    "kontent": "npm run docusaurus sync-kontent"
   },
   "dependencies": {
     "@docusaurus/core": "2.0.0-alpha.65",
@@ -20,8 +20,9 @@
     "dotenv": "^8.2.0",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
-    "rxjs": "^6.6.3",
-    "turndown": "^7.0.0"
+    "rehype-remark": "^8.0.0",
+    "remark-stringify": "^9.0.0",
+    "rxjs": "^6.6.3"
   },
   "browserslist": {
     "production": [
@@ -34,5 +35,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.",
+  "main": "babel.config.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "author": "",
+  "license": "ISC"
 }
