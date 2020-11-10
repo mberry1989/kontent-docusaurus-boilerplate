@@ -1,9 +1,15 @@
-const TurndownService = require('turndown');
+var unified = require('unified')
+var parse = require('rehype-parse')
+var rehype2remark = require('rehype-remark')
+var stringify = require('remark-stringify')
 
 const convert = (codename, title, body_copy, url) => {
-//markdown conversion
-const turndownService = new TurndownService()
-const markdown = turndownService.turndown(body_copy)
+    // HTML to Markdown
+    var processor = unified()
+        .use(parse)
+        .use(rehype2remark)
+        .use(stringify)    
+    const markdown = processor.processSync(body_copy)
 
 const data = `---
 id: ${codename}
