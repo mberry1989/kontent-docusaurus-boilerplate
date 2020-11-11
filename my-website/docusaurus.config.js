@@ -1,17 +1,17 @@
 const path = require('path');
 
 module.exports = {
-  title: 'My Site',
-  tagline: 'The tagline of my site',
+  title: 'Kontent + Docusaurus',
+  tagline: 'Build a headless walkthrough in 10 minutes',
   url: 'https://your-docusaurus-test-site.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
-  favicon: 'img/favicon.ico',
+  favicon: 'img/logo.svg',
   organizationName: 'kentico-michaelb', // Usually your GitHub org/user name.
   projectName: 'kontent-docusaurus-sample', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: 'Kontent + Docusaurus',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
