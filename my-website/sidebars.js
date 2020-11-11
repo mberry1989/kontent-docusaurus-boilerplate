@@ -10,32 +10,35 @@
     ]
   },
   {
-    "label": "Outdoor Activities",
+    "label": "Configuring Kontent",
     "type": "category",
     "items": [
-      "how_to_ride_a_bike",
-      "untitled_content_item",
-      {
-        "label": "Facilities",
-        "type": "category",
-        "items": [
-          "sub1_documentation",
-          {
-            "label": "Bike Trail Safety",
-            "type": "category",
-            "items": [
-              "closed_trails"
-            ]
-          }
-        ]
-      }
+      "create_a_project",
+      "untitled_content_item_e9304ae",
+      "untitled_content_item_11a99ff"
     ]
   },
   {
-    "label": "Indoor Activities",
+    "label": "Configuring the Sample",
     "type": "category",
     "items": [
-      "how_to_use_the_television"
+      "fork_from_github",
+      "untitled_content_item_b8726ea",
+      "untitled_content_item_70c122b"
+    ]
+  },
+  {
+    "label": "Deployment",
+    "type": "category",
+    "items": [
+      "deploying_to_netlify"
+    ]
+  },
+  {
+    "label": "Running the Site",
+    "type": "category",
+    "items": [
+      "commands"
     ]
   }
 ]
