@@ -15,7 +15,14 @@
     "items": [
       "create_a_project",
       "untitled_content_item_e9304ae",
-      "untitled_content_item_11a99ff"
+      {
+        "label": "Enabling Web Spotlight (optional)",
+        "type": "category",
+        "items": [
+          "what_is_web_spotlight",
+          "setting_up_preview"
+        ]
+      }
     ]
   },
   {

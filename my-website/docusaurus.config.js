@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   title: 'Kontent + Docusaurus',
   tagline: 'Build a headless walkthrough in 10 minutes',
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://sad-clarke-a5925e.netlify.app',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   favicon: 'img/logo.svg',

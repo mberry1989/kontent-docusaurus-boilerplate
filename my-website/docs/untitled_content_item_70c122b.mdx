@@ -4,5 +4,31 @@ title: Add Environment Variables
 sidebar_label: Add Environment Variables
 slug: add-environment-variables
 ---
-\
+In the *.env* file found in the root of the website, update the values with the keys found in your [Kentico Kontent](https://app.kontent.ai/ "Kentico Kontent") project:
+
+1.  Choose Project settings from the app menu. 
+2.  Under Development, choose API keys
+3.  Paste the respective keys into the .env file
+
+#### Example .env contents:
+
+`PROJECT_ID=1a1b1111-2c22-3333-d4ef-ghij5klm5n5o`
+
+`USE_PREVIEW=true`
+
+`PREVIEW_KEY=ew0KIC...`
+
+`DOCS_DIR=./docs`
+
+`DOC_CONTENT_TYPE=documentation`
+
+`PAGE_CONTENT_TYPE=page`
+
+The Kontent + Docusaurus sample populates the ***docs ***directory with markdown content and uses the ***documentation*** and ***page*** content types within Kentico Kontent to determine navigation vs. content pages.  These values are configurable in the *.env* file, but changing them is not recommended.
+
+:::note Preview
+
+Setting **USE_PREVIEW **to *false *will cause the sample to use only published versions of the content in Kentico Kontent. 
+
+:::
 
