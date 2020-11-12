@@ -11,6 +11,7 @@ A full demonstration of a Kontent + Docusaurus site that also acts as a tutorial
 - [Content Administration](#content-administration)
   - [Content Model Definitions](#content-model-definitions)
 - [Resolving Links and Content Items in Rich Text](#resolving-links-and-content-items-in-rich-text)
+- [Web Spotlight (optional)](#web-spotlight-(optional))
 - [Deploying to Netlify](#deploying-to-netlify)
 - [Getting Support](#getting-support-and-contributing)
 
@@ -164,6 +165,27 @@ Executing the inline resolution requires calling the JavaScript SDK's `resolveHT
 const body_copy = item.body_copy.resolveHtml()
 ```
 found in [buildContent.js](https://github.com/kentico-michaelb/kontent-docusaurus-boilerplate/blob/main/my-website/cms-scripts/builders/buildContent.js).
+
+## Web Spotlight (optional)
+Web Spotlight is an additional (optional) tool for Kentico Kontent focused on website management. For this project, it allows for:
+
+*   Seeing the hierarchy of a website in a page tree 
+*   Creating new pages from the page tree
+*   Previewing of changes in Kontent
+
+Web Spotlight is a paid feature and must be activated by a member of the Kentico Kontent Sales team for your subscription before it can be used. More information about Web Spotlight and activation can be seen in the [official Kentico Kontent documentation](https://docs.kontent.ai/tutorials/set-up-kontent/set-up-your-project/web-spotlight "Web Spotlight documentation").
+
+Web Spotlight uses Kentico Kontent's "Preview" functionality in order to show the live view of the site within the UI.
+
+To set up preview URLs for your project:
+
+1.  In Kentico Kontent, choose  Project settings   from the app menu.
+2.  Under Environment settings, choose Preview URLs.
+3.  Type in the preview URLs for each type of preview-able content.
+
+More details about setting up preview and Web Spotlight can be seen in the [official Kentico Kontent documentation.](https://docs.kontent.ai/tutorials/develop-apps/build-strong-foundation/set-up-preview "Kontent Documentation - set up preview for content items")
+
+**Note:** Preview URLs require an `https://` protocol and a URL accessible to Kontent. Without a valid SSL certificate, Kontent responds with secure connection errors. When developing apps locally, see how to [serve pages over HTTPS](https://create-react-app.dev/docs/using-https-in-development/) in combination with [ngrok](https://ngrok.com/docs)'s forwarded address.
 
 ## Deploying to Netlify
 When deploying to Netlify, set:
