@@ -11,7 +11,7 @@ A full demonstration of a Kontent + Docusaurus site that also acts as a tutorial
 - [Content Administration](#content-administration)
   - [Content Model Definitions](#content-model-definitions)
 - [Resolving Links and Content Items in Rich Text](#resolving-links-and-content-items-in-rich-text)
-- [Web Spotlight (optional)](#web-spotlight-(optional))
+- [Web Spotlight (optional)](#web-spotlight-optional)
 - [Deploying to Netlify](#deploying-to-netlify)
 - [Getting Support](#getting-support-and-contributing)
 
