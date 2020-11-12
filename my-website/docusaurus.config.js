@@ -3,12 +3,12 @@ const path = require('path');
 module.exports = {
   title: 'Kontent + Docusaurus',
   tagline: 'Build a headless walkthrough in 10 minutes',
-  url: 'https://sad-clarke-a5925e.netlify.app',
+  url: 'https://localhost:3000',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   favicon: 'img/logo.svg',
   organizationName: 'kentico-michaelb', // Usually your GitHub org/user name.
-  projectName: 'kontent-docusaurus-sample', // Usually your repo name.
+  projectName: 'kontent-docusaurus-boilerplate', // Usually your repo name.
   themeConfig: {
     navbar: {
       title: 'Kontent + Docusaurus',
