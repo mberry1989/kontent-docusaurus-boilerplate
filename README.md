@@ -21,15 +21,16 @@ A full demonstration of a Kontent + Docusaurus site that also acts as a tutorial
 
 To create a boilerplate project containing a homepage, one documentation section, and a documentation page:
 
-1.  In [Kentico Kontent](https://app.kontent.ai "Kentico Kontent"), choose _Project settings_ from the app menu.
-2.  Under _Production Environment Settings_, choose _API keys_
-3.  Enable the Management API
-4.  Navigate to the [Kontent Template Manager](https://kentico.github.io/kontent-template-manager/import "Kontent Template Manager")
-5.  Drop the [kontent-backup-Docusaurus-Template.zip](https://github.com/kentico-michaelb/kontent-docusaurus-boilerplate/blob/main/my-website/kontent-backup-DocusaurusTemplate.zip "Kontent Docusaurus Template Zip") export onto the Kontent Template Manager
-6.  Copy & paste the **Project ID** and the **Management API keys** from your newly created Kontent project into the respective fields in the template manager
-7.  Check *Publish language variants after import*
-8.  Click *Prepare for import *on the template manager
-9.  Click *Import data*
+1.  [Create a project in Kentico Kontent](https://docs.kontent.ai/tutorials/manage-kontent/projects/manage-projects#a-creating-projects "Kentico Kontent")
+2.  In the Kontent user interface, choose _Project settings_ from the app menu.
+3.  Under _Production Environment Settings_, choose _API keys_
+4.  Enable the Management API
+5.  Navigate to the [Kontent Template Manager](https://kentico.github.io/kontent-template-manager/import "Kontent Template Manager")
+6.  Drop the [kontent-backup-Docusaurus-Template.zip](https://github.com/kentico-michaelb/kontent-docusaurus-boilerplate/blob/main/my-website/kontent-backup-DocusaurusTemplate.zip "Kontent Docusaurus Template Zip") export onto the Kontent Template Manager
+7.  Copy & paste the **Project ID** and the **Management API keys** from your newly created Kontent project into the respective fields in the template manager
+8.  Check *Publish language variants after import*
+9.  Click *Prepare for import *on the template manager
+10.  Click *Import data*
 
 ## Application Setup
 
