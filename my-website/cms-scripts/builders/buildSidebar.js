@@ -15,8 +15,8 @@ async function buildSidebar(sections) {
     return console.log('Sidebar created.');
 }
 
-// 
 function buildSections(response) {
+    // map items from the API to fit sidebars.js expected object format
     let sidebarItems = response.items.map(item => {
         let section = {
             label: item.title.value,
@@ -36,14 +36,39 @@ function buildSections(response) {
         return section
     }); 
 
-    // handle nested pages
+    // create an array of homepage subpages to determine sidebar ordering
+    const homepageApiResponse = response.items.find(item => item.system.codename == 'homepage')
+
+    // transform nested page codenames into sidebars.js expected object format
     let sidebarWithNesting = buildSubSections(sidebarItems)
 
+    // order sidebar items off of homepage's subpages element
+    const orderedSidebar = orderSidebar(sidebarWithNesting, homepageApiResponse);
+
     // 'docs' plugin requires JSON format in the sidebars.js file
-    let sidebarJSON = JSON.stringify(sidebarWithNesting, null, 2)
+    let sidebarJSON = JSON.stringify(orderedSidebar, null, 2)
 
     return sidebarJSON
-}   
+}  
+
+function orderSidebar(sidebarWithNesting, homepageApiResponse) {
+
+    //Add homepage section as the first navigation item
+    const homepage = sidebarWithNesting.find(item => item.codename == 'homepage')
+
+    // create a new array to store the ordered navigation items
+    let orderedSidebarWithCodenames = [homepage]
+
+    // order pages based upon structure from the API response
+    for (subpage of homepageApiResponse.subpages.itemCodenames) {
+        const index = sidebarWithNesting.findIndex(item => item.codename === subpage)
+        orderedSidebarWithCodenames.push(sidebarWithNesting[index]) 
+    }  
+    // delete codenames from objects: codenames are necessary for mapping, but not allowed by 'docs' plugin
+    const orderedSidebar = orderedSidebarWithCodenames.map(({codename, ...keepAttrs}) => keepAttrs)
+
+    return orderedSidebar
+}
 
 function buildSubSections(sidebarItems) {
     let sections = sidebarItems.map(section => section.codename)
@@ -81,10 +106,7 @@ function buildSubSections(sidebarItems) {
     // remove nested section from level 0 of sidebar
     sidebarWithCodenames = sidebarWithCodenames.filter(item => !filters.includes(item.codename))
 
-    // delete codenames from objects -- codenames are necessry for mapping, but not allowed by 'docs' plugin
-    const sidebar = sidebarWithCodenames.map(({codename, ...keepAttrs}) => keepAttrs)
-
-    return sidebar
+    return sidebarWithCodenames
 }
 
 exports.buildSidebar = buildSidebar;
