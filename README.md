@@ -29,8 +29,8 @@ To create a boilerplate project containing a homepage, one documentation section
 6.  Drop the [kontent-backup-Docusaurus-Template.zip](https://github.com/kentico-michaelb/kontent-docusaurus-boilerplate/blob/main/my-website/kontent-backup-DocusaurusTemplate.zip "Kontent Docusaurus Template Zip") export onto the Kontent Template Manager
 7.  Copy & paste the **Project ID** and the **Management API keys** from your newly created Kontent project into the respective fields in the template manager
 8.  Check *Publish language variants after import*
-9.  Click *Prepare for import *on the template manager
-10.  Click *Import data*
+9.  Click *Prepare for import* on the template manager
+10. Click *Import data*
 
 ## Application Setup
 
@@ -41,18 +41,19 @@ To run the app:
 1. Update the Kontent project ID in `.env` - detailed instructions available [below](#connecting-to-your-sample-project)
 1. From the terminal run:
    1. `cd my-website`
-   1. `npm install`
+   1. `npm install` to install dependencies
+   1. `npm run kontent` to sync with Kentico Kontent
+   1. `npm start` to start the site on _http://localhost:3000_
+
    
 ### Connecting to your Sample Project
 
 1. In Kentico Kontent, choose _Project settings_ from the app menu
 1. Under _Production Environment Settings_, choose _API keys_
 1. Open the `.env` file
-1. Use the _Delivery API_ value from your Kentico Kontent project as the *PROJECT_ID* value
-1. Set USE_PREVIEW to _false_
+1. Use  _Project ID_ from your Kentico Kontent project as the *PROJECT_ID* value
+1. Set USE_PREVIEW to _false_ to sync only published content
 1. Save the changes
-1. Run `npm run kontent` from the terminal to sync with Kentico Kontent
-1. Run `npm start` from the terminal to start the site on _http://localhost:3000_
 
 #### Example .env contents:
 
@@ -67,7 +68,7 @@ PAGE_CONTENT_TYPE=page
 
 The Kontent + Docusaurus sample populates the **docs** directory with markdown content and uses the **documentation** and **page** content types within Kentico Kontent to determine navigation vs. content pages.  These values are configurable in the *.env* file, but changing them is not recommended.
 
-**Note:** Setting **USE_PREVIEW** to _false_ will cause the sample to use only published versions of the content in Kentico Kontent. 
+**Note:** Setting **USE_PREVIEW** to _false_ will cause the sample to use only published versions of the content in Kentico Kontent. Setting USE_PREVIEW to _true_ and using the Kontent Preview API key adds Draft content to your Docusarus project.
 
 ## How It Works
 This boilerplate uses a custom Docusaurus plugin: [cms-scripts](https://github.com/kentico-michaelb/kontent-docusaurus-boilerplate/tree/main/my-website/cms-scripts). The plugin is run using a CLI command that leverages the `extendCli` Docusaurus lifecycle API, and creates markdown files in the "docs" directory. The plugin pipeline is:
@@ -91,14 +92,15 @@ More information about Docusaurus plugins and API lifecycles can be seen in thei
 
 * Homepage
   * The homepage is the root node of the site, and as the root stores all expandable navigation sections in its _Subpages_ element. It also acts as an expandable navigation section itself.
-  * The first *Documentation* item in its _Content_ element will act as the default homepage. **IMPORTANT:** This first Documentation item in the Homepage's _Content_ element must use "/" as its URL slug.
+  * The first *Documentation* item in its _Content_ element will act as the default homepage. 
+  > **_IMPORTANT:_** The first _Documentation_ item in the Homepage's _Content_ element must use "/" as its URL slug.
 * Page
   * The **Page** content type are reflected as sections in the site's sidebar navigation
   * A **Page**'s _Subpages_ element can contains other page items (to create nested sections) or documentation items
 * Documentation
-  * The **Documentation** content type are primary content node.  They store the titles and body copy.
+  * The **Documentation** content type holds the primary content.  They store the titles and body copy.
 * Callout
-  * The **Callout** content type renders colored informational text boxes and are to be used in the body copy of documentation items.
+  * The **Callout** content type renders informational text boxes and are to be used in the body copy of documentation items.
 
 ## Resolving Links and Content Items in Rich Text
 The API query used in [cms-scripts/api/fetchItems.js](https://github.com/kentico-michaelb/kontent-docusaurus-boilerplate/blob/main/my-website/cms-scripts/api/fetchItems.js) is set to resolve links and inline content items on the query level as described in the Kentico Kontent JavaScript SDK documentation [here](https://github.com/Kentico/kontent-delivery-sdk-js/blob/master/DOCS.md#resolve-url-slugs-on-query-level).
